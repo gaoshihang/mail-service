@@ -1,0 +1,33 @@
+server:
+  port: 8099
+
+eureka:
+  instance:
+    leaseRenewalIntervalInSeconds: 1
+    leaseExpirationDurationInSeconds: 2
+  client:
+    serviceUrl:
+      defaultZone: http://127.0.0.1:8761/eureka/
+    healthcheck:
+      enabled: true
+    lease:
+      duration: 5
+    register-with-eureka: false
+    fetch-registry: false
+
+spring:
+  application:
+    name: mail-service
+  datasource:
+#    url: jdbc:mysql://192.168.10.123:3306/test
+    url: jdbc:mysql://172.30.104.159:3306/test
+    username: root
+    password: gaopeng
+    driver-class-name: com.mysql.jdbc.Driver
+
+logging:
+  level:
+    com.opencodez.microservice: DEBUG
+
+
+
